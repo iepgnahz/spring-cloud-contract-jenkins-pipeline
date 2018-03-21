@@ -14,7 +14,7 @@ public class ConsumerController {
 
     @GetMapping
     public String get(){
-        return restTemplate.getForObject("http://localhost:8088/helloWorld",String.class);
+        return restTemplate.getForObject("http://localhost:8082/helloWorld",String.class);
     }
 
 }

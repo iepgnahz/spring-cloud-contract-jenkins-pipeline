@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)
-@AutoConfigureStubRunner(workOffline = true, ids = "pei.zhang:provider-service:+:stubs:8088")
+@AutoConfigureStubRunner
 @SpringBootTest(classes = ConsumerApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ConsumerApplicationTests {
     @Autowired

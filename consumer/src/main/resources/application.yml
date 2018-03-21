@@ -1,0 +1,4 @@
+stubrunner:
+  ids:
+    - pei.zhang:provider-service:+:stubs:8082
+  repository-root: http://localhost:8089/repository/maven-snapshots/
