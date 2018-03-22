@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            dockerfile true
+            label 'provider-container'
+        }
+    }
 
     stages {
         stage('start maven repo') {
@@ -10,7 +15,7 @@ pipeline {
 
         stage('provider integration test') {
             agent {
-                dockerfile true
+                label 'provider-container'
                 reuseNode true
             }
             steps {
