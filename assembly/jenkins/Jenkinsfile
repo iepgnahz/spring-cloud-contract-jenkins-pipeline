@@ -5,7 +5,17 @@ pipeline {
 
         stage('start maven repo') {
             steps {
-                sh 'docker ps'
+                sh -c 'docker-compose -f ./assembly/docker/docker-compose.yml up -d'
+            }
+        }
+
+        stage('provider integration test') {
+            agent {
+                dockerfile true
+                reuseNode true
+            }
+            steps {
+                sh './gradlew clean test'
             }
         }
 
@@ -14,7 +24,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh './gradlew clean test'
+                sh './gradlew publish'
             }
         }
     }

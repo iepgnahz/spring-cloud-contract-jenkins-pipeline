@@ -5,4 +5,4 @@ services:
     ports:
      - "8089:8081"
     volumes:
-     - /Users/pezhang/docker/nexus-data:/nexus-data
+       - /Users/pezhang/docker/nexus-data:/nexus-data
