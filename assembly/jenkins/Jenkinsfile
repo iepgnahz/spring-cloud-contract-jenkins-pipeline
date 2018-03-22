@@ -10,8 +10,10 @@ pipeline {
 
         stage('provider integration test') {
             agent {
-                dockerfile true
-                reuseNode true
+                dockerfile {
+                    dir '.'
+                    reuseNode true
+                }
             }
             steps {
                 sh 'cd ./provider-service && ./gradlew clean test'
