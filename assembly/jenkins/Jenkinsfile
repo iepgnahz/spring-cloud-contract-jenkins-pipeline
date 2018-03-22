@@ -11,6 +11,7 @@ pipeline {
         stage('provider integration test') {
             agent {
                 dockerfile true
+                reuseNode true
             }
             steps {
                 sh 'cd ./provider-service && ./gradlew clean test'
@@ -19,7 +20,7 @@ pipeline {
 
         stage('provider push stub jar') {
             steps {
-                sh './gradlew publish'
+                sh 'cd ./provider-service && ./gradlew publish'
             }
         }
     }
