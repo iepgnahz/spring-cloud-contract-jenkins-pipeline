@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = $PATH:
+    }
+
     stages {
         stage('start maven repo') {
             steps {
