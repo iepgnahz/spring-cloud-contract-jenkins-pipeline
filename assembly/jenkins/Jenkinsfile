@@ -5,7 +5,7 @@ pipeline {
 
         stage('start maven repo') {
             steps {
-                sh -c 'docker-compose -f ./assembly/docker/docker-compose.yml up -d'
+                sh 'docker-compose -f ./assembly/docker/docker-compose.yml up -d'
             }
         }
 
