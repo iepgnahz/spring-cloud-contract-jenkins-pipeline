@@ -20,9 +20,6 @@ pipeline {
         }
 
         stage('provider push stub jar') {
-            agent {
-                dockerfile true
-            }
             steps {
                 sh './gradlew publish'
             }
