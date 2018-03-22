@@ -13,7 +13,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh 'ls && pwd'
+                sh 'cd ./provider-service && ./gradlew clean test'
             }
         }
 
