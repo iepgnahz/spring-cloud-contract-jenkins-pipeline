@@ -10,19 +10,26 @@ pipeline {
 
         stage('provider integration test') {
             agent {
-                dockerfile {
+                docker {
+                    image 'java:8'
+                    label 'provider'
+                    args  '-v ./provider-service:/var/app/provider-service'
                     reuseNode true
-                    dir '.'
-                    label 'provider-container'
                 }
             }
 
             steps {
-                sh 'cd ./provider-service && ./gradlew clean test'
+                sh 'cd /var/app/provider-service && ./gradlew clean test'
+            }
+        }
+
+        stage('provider publish') {
+            agent {
+                label 'provider'
             }
 
             steps {
-                sh 'cd ./provider-service && ./gradlew publish'
+                sh 'cd /var/app/provider-service && ./gradlew clean test'
             }
         }
     }
