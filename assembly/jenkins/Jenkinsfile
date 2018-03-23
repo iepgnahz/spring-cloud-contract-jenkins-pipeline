@@ -31,7 +31,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd /var/app/provider-service && ./gradlew publish'
+                sh 'cd /var/app/provider-service && ./gradlew clean test publish'
             }
         }
 
