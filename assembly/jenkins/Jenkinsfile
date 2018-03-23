@@ -24,10 +24,6 @@ pipeline {
         }
 
         stage('provider publish') {
-            agent {
-                label 'provider'
-            }
-
             steps {
                 sh 'cd /var/app/provider-service && ./gradlew clean test'
             }
