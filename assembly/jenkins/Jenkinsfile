@@ -13,7 +13,7 @@ pipeline {
                 docker {
                     image 'java:8'
                     label 'provider'
-                    args  '-v ./provider-service:/var/app/provider-service'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service'
                     reuseNode true
                 }
             }
