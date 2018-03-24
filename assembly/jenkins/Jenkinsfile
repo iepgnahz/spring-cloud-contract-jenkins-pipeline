@@ -12,6 +12,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
+                    reuseNode true
                     args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline --alias provider'
                 }
             }
