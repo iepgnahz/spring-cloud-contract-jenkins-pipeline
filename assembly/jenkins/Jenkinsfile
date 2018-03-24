@@ -12,7 +12,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline'
                 }
             }
 
@@ -25,7 +25,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline'
                 }
             }
             steps {
@@ -37,7 +37,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/consumer:/var/app/consumer'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/consumer:/var/app/consumer --network my_pipeline'
                 }
             }
             steps {
