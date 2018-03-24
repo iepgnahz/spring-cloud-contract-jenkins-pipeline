@@ -6,3 +6,7 @@ services:
      - "8089:8081"
     volumes:
        - /Users/pezhang/docker/nexus-data:/nexus-data
+networks:
+  default:
+    external:
+      name: my_pipeline
