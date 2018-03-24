@@ -29,7 +29,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd /var/app/provider-service && ./gradlew clean test publish'
+                sh 'cd /var/app/provider-service && ./gradlew --status && ./gradlew clean test publish'
             }
         }
 
@@ -37,7 +37,6 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    label 'provider'
                     args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/consumer:/var/app/consumer'
                 }
             }

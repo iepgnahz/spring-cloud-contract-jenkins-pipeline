@@ -52,7 +52,7 @@ publishing {
 				username "admin"
 				password "admin123"
 			}
-			url = "http://localhost:8089/repository/maven-snapshots/"
+			url = "http://10.205.21.54:8089/repository/maven-snapshots/"
 		}
 	}
 }
