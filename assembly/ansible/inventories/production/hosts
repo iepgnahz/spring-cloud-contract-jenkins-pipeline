@@ -1,0 +1,5 @@
+[localhost]
+localhost ansible_connection=local
+
+[webServer]
+aws_host ansible_ssh_private_key_file=/Users/pezhang/Downloads/ubuntu-demo.pem ansible_ssh_host=18.188.105.74
