@@ -13,7 +13,7 @@ pipeline {
                 docker {
                     image 'java:8'
                     reuseNode true
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline --alias provider'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline --network--alias provider'
                 }
             }
 
@@ -26,7 +26,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline --alias provider-publish'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/provider-service:/var/app/provider-service --network my_pipeline --network--alias provider-publish'
                 }
             }
             steps {
@@ -38,7 +38,7 @@ pipeline {
             agent {
                 docker {
                     image 'java:8'
-                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/consumer:/var/app/consumer --network my_pipeline --alias consumer'
+                    args  '-v /Users/pezhang/Demo/spring-cloud/spring-cloud-contract-demo/consumer:/var/app/consumer --network my_pipeline --network--alias consumer'
                 }
             }
             steps {
